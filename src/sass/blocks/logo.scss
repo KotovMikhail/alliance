@@ -1,0 +1,17 @@
+.logo {
+  &__img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+
+    @include tablet-media {
+      width: 132px;
+      height: 55px;
+    }
+
+    @include mobile {
+      width: 207px;
+      height: 86px;
+    }
+  }
+}

@@ -1,0 +1,30 @@
+/* Vendor */
+@import "vendor/normalize";
+@import "vendor/swiper";
+@import "vendor/overrides";
+/* General */
+@import "general/variables";
+@import "general/functions";
+@import "general/mixins";
+@import "general/fonts";
+@import "general/global";
+@import "general/animations";
+/* Blocks */
+
+@import "blocks/logo";
+@import "blocks/btn";
+@import "blocks/header";
+@import "blocks/menu";
+@import "blocks/user";
+@import "blocks/form";
+@import "blocks/callback";
+@import "blocks/goods";
+@import "blocks/offer";
+@import "blocks/virtual";
+@import "blocks/categories";
+@import "blocks/arrivals";
+@import "blocks/subscribe";
+@import "blocks/footer";
+@import "blocks/contacts";
+@import "blocks/socials";
+@import "blocks/payment";

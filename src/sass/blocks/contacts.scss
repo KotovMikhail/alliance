@@ -1,0 +1,158 @@
+.contacts {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-left: 80px;
+  color: $white;
+
+  @include tablet {
+    margin-left: 50px;
+  }
+
+  @include tablet-media {
+    margin-left: 35px;
+  }
+
+  @include mobile {
+    order: 2;
+  }
+
+  @include mobile-middle {
+    margin-bottom: 20px;
+    width: 100%;
+  }
+
+  &__pickup {
+    margin: 0;
+    margin-bottom: 30px;
+    font-size: 18px;
+    line-height: 24px;
+    color: $white;
+    transition: color 0.3s ease-in-out;
+
+    &:hover {
+      color: $red;
+      transition: color 0.3s ease-in-out;    }
+
+    @include tablet-media {
+      margin-bottom: 22px;
+      font-size: 12px;
+      line-height: 15px;
+    }
+
+    @include mobile-middle {
+      font-size: 18px;
+      line-height: 24px;
+    }
+  }
+
+  &__address {
+    position: relative;
+    margin: 0;
+    margin-bottom: 25px;
+    width: 100%;
+    max-width: 207px;
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: 23px;
+      height: 29px;
+      top: 0;
+      left: -35px;
+      background-image: url("../../img/icon-address.png");
+      background-repeat: no-repeat;
+      background-position: 0 0;
+      background-size: cover;
+    }
+
+    @include tablet-media {
+      max-width: 200px;
+      margin-bottom: 15px;
+      font-size: 11px;
+
+      &::before {
+        left: -20px;
+        width: 15px;
+        height: 19px;
+      }
+    }
+
+    @include mobile-middle {
+      font-size: 16px;
+      line-height: 1.2;
+      max-width: 220px;
+      &::before {
+        left: -35px;
+        width: 23px;
+        height: 29px;
+      }
+    }
+
+
+  }
+
+  &__phone {
+    position: relative;
+    margin: 0;
+    margin-bottom: 22px;
+    transition: color 0.3s ease-in-out;
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: 20px;
+      height: 25px;
+      top: 0;
+      left: -35px;
+      background-image: url("../../img/icon-phone-red.png");
+      background-repeat: no-repeat;
+      background-position: 0 0;
+      background-size: cover;
+    }
+
+    &:hover {
+      color: $red;
+      transition: color 0.3s ease-in-out;
+    }
+
+    @include tablet-media {
+      margin-bottom: 15px;
+      font-size: 11px;
+
+      &::before {
+        left: -20px;
+        width: 13px;
+        height: 16px;
+      }
+    }
+
+    @include mobile-middle {
+      font-size: 16px;
+      line-height: 1.2;
+
+      &::before {
+        left: -35px;
+        width: 23px;
+        height: 29px;
+      }
+    }
+  }
+
+  &__business-hours {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.2;
+
+    @include tablet-media {
+      font-size: 11px;
+    }
+
+    @include mobile-middle {
+      font-size: 16px;
+      line-height: 1.2;
+    }
+  }
+}

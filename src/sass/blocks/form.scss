@@ -1,0 +1,244 @@
+.form {
+
+  &__fieldset {
+    margin: 0;
+    padding: 0;
+    border: none;
+  }
+
+  &__fields {
+    display: flex;
+  }
+
+  &__input {
+    margin: 0;
+    padding: 0;
+    border: none;
+    box-sizing: border-box;
+    @include font-xxs;
+    transition: box-shadow 0.3s ease-in-out;
+
+    &:focus,
+    &:active {
+      outline: none;
+      box-shadow: $grey-shadow-22;
+      transition: box-shadow 0.3s ease-in-out;
+    }
+
+    &::placeholder {
+      @include font-xxs;
+    }
+  }
+
+  &--search {
+    position: relative;
+    display: flex;
+    align-items: center;
+
+
+    & .form__input {
+      width: 292px;
+      padding-top: 15px;
+      padding-right: 15px;
+      padding-bottom: 15px;
+      padding-left: 30px;
+      border-top-left-radius: 5px;
+      border-bottom-left-radius: 5px;
+      color: $grey;
+      background-color: $light-grey;
+
+      &::placeholder {
+        color: $grey;
+      }
+
+      @include tablet {
+        width: 100%;
+        max-width: 250px;
+        padding-top: 9.5px;
+        padding-bottom: 9.5px;
+      }
+
+      @include tablet-media {
+        width: 100%;
+        max-width: 250px;
+        padding-top: 7px;
+        padding-right: 5px;
+        padding-bottom: 7px;
+
+      }
+
+      @include mobile {
+        display: none;
+      }
+    }
+
+    & .form__label {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      left: 8px;
+      width: 15px;
+      height: 15px;
+      font-size: 0;
+      background-image: url("../../img/icon-search.png");
+      background-repeat: no-repeat;
+      background-position: 0 0;
+      background-size: cover;
+      border: none;
+      cursor: pointer;
+      box-sizing: border-box;
+
+      @include mobile {
+        display: none;
+      }
+    }
+  }
+
+  &--subscribe {
+
+    & .form__fields {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      max-width: 745px;
+      margin: 0 auto;
+
+      @include tablet-media {
+        justify-content: space-between;
+        max-width: 475px;
+      }
+
+      @include mobile {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+
+    & .form__input {
+      width: 100%;
+      max-width: 360px;
+      padding-top: 20px;
+      padding-right: 20px;
+      padding-bottom: 20px;
+      padding-left: 20px;
+      border-radius: 5px;
+      color: $black;
+      background-color: $white;
+      font-size: 20px;
+      line-height: 24px;
+
+      &::placeholder {
+        color: $black;
+        font-size: 20px;
+        line-height: 24px;
+      }
+
+      @include tablet-media {
+        max-width: 230px;
+        padding-top: 12px;
+        padding-right: 15px;
+        padding-bottom: 12px;
+        padding-left: 20px;
+        font-size: 13px;
+        line-height: 15px;
+
+        &::placeholder {
+          font-size: 13px;
+          line-height: 15px;
+        }
+      }
+
+      @include mobile {
+        margin-bottom: 20px;
+      }
+    }
+  }
+
+  &--reg {
+    width: 100%;
+    max-width: 210px;
+
+    @include tablet-media {
+      max-width: 135px;
+    }
+
+    @include mobile {
+      order: 0;
+    }
+
+    @include mobile-middle {
+      max-width: 210px;
+      order: 2;
+    }
+
+    .form__fields {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+    }
+
+    .form__input {
+      width: 100%;
+      max-width: 210px;
+      padding-top: 10px;
+      padding-right: 10px;
+      padding-bottom: 10px;
+      padding-left: 10px;
+      border-radius: 2px;
+      color: $black;
+      background-color: $white;
+      font-size: 14px;
+      line-height: 16px;
+
+      &--login {
+        margin-bottom: 18px;
+      }
+
+      &--password {
+        margin-bottom: 18px;
+      }
+
+      &::placeholder {
+        color: $black;
+        font-size: 14px;
+        line-height: 16px;
+      }
+
+      &:focus,
+      &:active {
+        outline: none;
+        box-shadow: $white-shadow-20;
+        transition: box-shadow 0.3s ease-in-out;
+      }
+
+      @include tablet-media {
+        padding-top: 8px;
+        padding-bottom: 8px;
+        font-size: 9px;
+        line-height: 11px;
+
+        &::placeholder {
+          font-size: 9px;
+          line-height: 11px;
+        }
+      }
+
+      @include mobile-middle {
+        padding-top: 10px;
+        padding-right: 10px;
+        padding-bottom: 10px;
+        padding-left: 10px;
+        font-size: 14px;
+        line-height: 16px;
+
+        &::placeholder {
+          font-size: 14px;
+          line-height: 16px;
+        }
+      }
+    }
+  }
+}
+
+

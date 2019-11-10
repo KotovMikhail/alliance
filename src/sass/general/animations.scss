@@ -1,0 +1,41 @@
+@keyframes show {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+
+@keyframes autofill {
+  to {
+    color: inherit;
+    background: $white;
+  }
+}
+
+.form__input:-webkit-autofill {
+  animation-name: autofill;
+  animation-fill-mode: both;
+}
+
+
+@keyframes bounce {
+	0% {
+		transform: translate(-50%, -50%) translateY(-2000px);
+	}
+
+	70% {
+		transform: translate(-50%, -50%) translateY(30px);
+	}
+
+	90% {
+		transform: translate(-50%, -50%) translateY(10px);
+	}
+
+	100% {
+		transform: translate(-50%, -50%) translateY(0);
+	}
+}

@@ -1,0 +1,178 @@
+@mixin desktop-only {
+  @media (min-width: $width-desktop) {
+    @content;
+  }
+}
+
+@mixin laptop {
+  @media (max-width: $width-desktop - 1px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (max-width: $width-laptop - 1px) {
+    @content;
+  }
+}
+
+@mixin tablet-small {
+  @media (max-width: $width-tablet - 1px) {
+    @content;
+  }
+}
+
+@mixin tablet-media {
+  @media (max-width: $width-tablet-media) {
+    @content;
+  }
+}
+
+@mixin tablet-only {
+  @media (max-width: $width-tablet - 1px) and (min-width: $width-mobile) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media (max-width: $width-mobile - 1px) {
+    @content;
+  }
+}
+
+@mixin mobile-middle {
+  @media (max-width: $width-mobile-middle - 1px) {
+    @content;
+  }
+}
+
+@mixin mobile-small {
+  @media (max-width: $width-mobile-small - 1px) {
+    @content;
+  }
+}
+
+@mixin retina {
+  @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+    @content;
+  }
+}
+
+@mixin font-xxxl-bold-72 {
+  font-family: $pt-bold;
+  font-size: 72.15px;
+  line-height: 1.2;
+  font-weight: 600;
+}
+
+@mixin font-xxl {
+  font-size: 64px;
+  line-height: 90px;
+  font-weight: 400;
+}
+
+@mixin font-xl {
+  font-size: 32px;
+  line-height: 40px;
+  font-weight: normal;
+}
+
+@mixin font-medium-bold-30 {
+  font-family: $pt-bold;
+  font-size: 30px;
+  line-height: 1.2;
+  font-weight: bold;
+}
+
+@mixin font-small-26 {
+  font-size: 26.48px;
+  line-height: 1.2;
+  font-weight: normal;
+}
+
+@mixin font-xs-22-bold {
+  font-family: $pt-bold;
+  font-size: 22px;
+  line-height: 1.2;
+  font-weight: bold;
+}
+
+@mixin font-xs-20-bold {
+  font-family: $pt-bold;
+  font-size: 20.48px;
+  line-height: 1.2;
+  font-weight: bold;
+}
+
+@mixin font-xs-18-bold {
+  font-size: 18px;
+  line-height: 1.2;
+  font-weight: bold;
+}
+
+@mixin font-xs-20 {
+  font-size: 20px;
+  line-height: 1.2;
+  font-weight: 400;
+}
+
+@mixin font-xs-18 {
+  font-size: 18px;
+  line-height: 1.2;
+  font-weight: 400;
+}
+
+@mixin font-xs {
+  font-size: 16px;
+  line-height: 1.2;
+  font-weight: 400;
+}
+
+@mixin font-xxs {
+  font-size: 14px;
+  line-height: 1.2;
+  font-weight: normal;
+}
+
+@mixin font-xxxs {
+  font-size: 9px;
+  line-height: 1.2;
+  font-weight: normal;
+}
+
+@mixin font-face($name, $filename, $weight, $style: normal) {
+  @font-face {
+    font-family: $name;
+    font-weight: $weight;
+    font-style: $style;
+    font-display: swap;
+    src: url("../fonts/"+$filename+".woff2") format("woff2"),
+      url("../fonts/"+$filename+".woff") format("woff");
+  }
+}
+
+@mixin field-reset {
+  padding: 0;
+  background-color: $transparent;
+  border: none;
+}
+
+@mixin list-reset {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+@mixin link-reset {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+@mixin button-reset {
+  padding: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  outline: none;
+}

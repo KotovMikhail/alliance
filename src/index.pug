@@ -1,0 +1,279 @@
+extends pug/layout
+include pug/mixins/svg
+
+block content
+
+  header.header
+    .header__top
+      .overlay
+      .header__top-container.container
+        .header__menu-wrapper
+          nav.menu.header__top-menu
+            button.btn.btn--close.btn--header-menu-close
+            ul.menu__list
+              li.menu__item: a.menu__link(href="#" target="_blank" title="Оплата") Оплата
+              li.menu__item: a.menu__link(href="#" target="_blank" title="Доставка") Доставка
+              li.menu__item: a.menu__link(href="#" target="_blank" title="Вопрос-Ответ") Вопрос-Ответ
+              li.menu__item: a.menu__link(href="#" target="_blank" title="Оферта") Оферта
+              li.menu__item: a.menu__link(href="#" target="_blank" title="Контакты") Контакты
+
+        a.btn.btn--red.btn--icon(href="#" target="_blank" title="Интернет-магазин") Интернет-магазин
+
+        .user.header__user
+          ul.user__list
+            li.user__item
+              a.user__link.user__link--enter(href="#" target="_blank" title="Enter") Вход
+            li.user__item
+              a.user__link.user__link--reg(href="#" target="_blank" title="Registration") Регистрация
+
+        button.btn.btn--burger.header__btn-burger
+          span
+
+    .header__middle
+      .header__middle-container.container
+
+        .logo.header__logo
+          a.logo__link(href="#" title="Alliance Tracks" target="_blank")
+            img.logo__img(src="./img/icon-logo.png" width="207" height="86" alt="Alliance Tracks")
+
+        form.form.form--search.header__form-search(action="#" method="GET" id="form-search")
+          input.form__input(type="search" name="search" id="search" value="" maxlength="100" placeholder="Поиск товара")
+          label.form__label(for="search") Поиск
+          button.btn.btn--red.btn--search Поиск
+
+        .callback.header__callback
+            a.callback__phone(href="tel:88000000000") 8 800 000 00 00
+            a.callback__text(href="#" title="Заказать звонок") Заказать звонок
+
+        .goods.header__goods
+          a.goods__busket(href="#")
+            span.goods__text Корзина
+            span.goods__sum 3249 руб
+          a.goods__payment(href="#" title="") Оплатить заказ
+
+    .header__bottom
+      .header__bottom-container.container
+        nav.menu.header__bottom-menu
+          ul.menu__list
+            li.menu__item: a.menu__link(href="#" target="_blank" title="Шины") Шины
+            li.menu__item: a.menu__link(href="#" target="_blank" title="Автохимия") Автохимия
+            li.menu__item: a.menu__link(href="#" target="_blank" title="Автозапчасти") Автозапчасти
+            li.menu__item: a.menu__link(href="#" target="_blank" title="Масла") Масла
+            li.menu__item: a.menu__link(href="#" target="_blank" title="Автостекла") Автостекла
+
+        .offer.header__offer
+          ul.offer__list
+            li.offer__item: a.offer__link.offer__link--service(href="#" target="_blank" title="Сервис грузовой техники") СЕРВИС ГРУЗОВОЙ ТЕХНИКИ
+            li.offer__item: a.offer__link.offer__link--sale(href="#" target="_blank" title="Продажа грузовой техники") ПРОДАЖА ГРУЗОВОЙ ТЕХНИКИ
+  main
+    section.promo
+      h2.promo__title.visually-hidden 3D-тур по нашему складу
+      .swiper-container
+        .swiper-wrapper
+          .swiper-slide
+            img(src="img/bg-slider.jpg" alt="3D-тур по нашему складу" width="1920" height="382")
+            .virtual
+              span.virtual__image
+              p.virtual__text #[span 3D-тур] по нашему складу
+                a.btn.btn--red.btn--link Перейти
+
+          .swiper-slide
+            img(src="img/bg-slider.jpg" alt="3D-тур по нашему складу" width="1920" height="382")
+            .virtual
+              span.virtual__image
+              p.virtual__text #[span 3D-тур] по нашему складу
+                a.btn.btn--red.btn--link Перейти
+        .swiper-pagination
+
+    section.categories
+      .container
+        h2.title.categories__title Категории продукции
+
+        ul.categories__list
+          li.categories__item
+            .categories__box
+              img.categories__img(src="img/tires.png" width="263" height="263" alt="Шины")
+              .categories__overlay
+                a.btn.btn--categories(href="#" target="_blank" title="Шины") Перейти
+            p.categories__text Шины
+
+          li.categories__item
+            .categories__box
+              img.categories__img(src="img/chemikals.png" width="263" height="263" alt="Автохимия")
+              .categories__overlay
+                a.btn.btn--categories(href="#" target="_blank" title="Автохимия") Перейти
+            p.categories__text Автохимия
+
+          li.categories__item
+            .categories__box
+              img.categories__img(src="img/oils.png" width="263" height="263" alt="Автомобильные масла")
+              .categories__overlay
+                a.btn.btn--categories(href="#" target="_blank" title="Автомобильные масла") Перейти
+            p.categories__text Автомобильные масла
+
+          li.categories__item
+            .categories__box
+              img.categories__img(src="img/parts.png" width="263" height="263" alt="Автозапчасти")
+              .categories__overlay
+                a.btn.btn--categories(href="#" target="_blank" title="Автозапчасти") Перейти
+            p.categories__text Автозапчасти
+
+    section.arrivals
+      .container
+        h2.title.arrivals__title Новые поступления
+        p.arrivals__description Мы пополняем ассортимент магазина каждые 4 часа. Вы всегда можете найти у нас что-то новое!
+
+        ul.arrivals__list
+          li.arrivals__item
+            .arrivals__box
+              img.arrivals__img(src="img/new-items.png" width="221" height="221" alt="Масло трансмиссионное ЛУКОЙЛ ATF")
+            p.arrivals__text Масло трансмиссионное ЛУКОЙЛ ATF
+            p.arrivals__price 890 ₽
+            .arrivals__overlay
+              p.arrivals__overlay-text This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin,
+              a.btn.btn--red.btn--icon.btn--arrivals(href="#" target="_blank" title="Масло трансмиссионное ЛУКОЙЛ ATF") Купить
+
+          li.arrivals__item
+            .arrivals__box
+              img.arrivals__img(src="img/new-items.png" width="221" height="221" alt="Масло трансмиссионное ЛУКОЙЛ ATF")
+            p.arrivals__text Масло трансмиссионное ЛУКОЙЛ ATF
+            p.arrivals__price 890 ₽
+            .arrivals__overlay
+              p.arrivals__overlay-text This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin,
+              a.btn.btn--red.btn--icon.btn--arrivals(href="#" target="_blank" title="Масло трансмиссионное ЛУКОЙЛ ATF") Купить
+
+          li.arrivals__item
+            .arrivals__box
+              img.arrivals__img(src="img/new-items.png" width="221" height="221" alt="Масло трансмиссионное ЛУКОЙЛ ATF")
+            p.arrivals__text Масло трансмиссионное ЛУКОЙЛ ATF
+            p.arrivals__price 890 ₽
+            .arrivals__overlay
+              p.arrivals__overlay-text This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin,
+              a.btn.btn--red.btn--icon.btn--arrivals(href="#" target="_blank" title="Масло трансмиссионное ЛУКОЙЛ ATF") Купить
+
+          li.arrivals__item
+            .arrivals__box
+              img.arrivals__img(src="img/new-items.png" width="221" height="221" alt="Масло трансмиссионное ЛУКОЙЛ ATF")
+            p.arrivals__text Масло трансмиссионное ЛУКОЙЛ ATF
+            p.arrivals__price 890 ₽
+            .arrivals__overlay
+              p.arrivals__overlay-text This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin,
+              a.btn.btn--red.btn--icon.btn--arrivals(href="#" target="_blank" title="Масло трансмиссионное ЛУКОЙЛ ATF") Купить
+
+
+          li.arrivals__item
+            .arrivals__box
+              img.arrivals__img(src="img/new-items.png" width="221" height="221" alt="Масло трансмиссионное ЛУКОЙЛ ATF")
+            p.arrivals__text Масло трансмиссионное ЛУКОЙЛ ATF
+            p.arrivals__price 890 ₽
+            .arrivals__overlay
+              p.arrivals__overlay-text This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin,
+              a.btn.btn--red.btn--icon.btn--arrivals(href="#" target="_blank" title="Масло трансмиссионное ЛУКОЙЛ ATF") Купить
+
+          li.arrivals__item
+            .arrivals__box
+              img.arrivals__img(src="img/new-items.png" width="221" height="221" alt="Масло трансмиссионное ЛУКОЙЛ ATF")
+            p.arrivals__text Масло трансмиссионное ЛУКОЙЛ ATF
+            p.arrivals__price 890 ₽
+            .arrivals__overlay
+              p.arrivals__overlay-text This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin,
+              a.btn.btn--red.btn--icon.btn--arrivals(href="#" target="_blank" title="Масло трансмиссионное ЛУКОЙЛ ATF") Купить
+
+          li.arrivals__item
+            .arrivals__box
+              img.arrivals__img(src="img/new-items.png" width="221" height="221" alt="Масло трансмиссионное ЛУКОЙЛ ATF")
+            p.arrivals__text Масло трансмиссионное ЛУКОЙЛ ATF
+            p.arrivals__price 890 ₽
+            .arrivals__overlay
+              p.arrivals__overlay-text This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin,
+              a.btn.btn--red.btn--icon.btn--arrivals(href="#" target="_blank" title="Масло трансмиссионное ЛУКОЙЛ ATF") Купить
+
+          li.arrivals__item
+            .arrivals__box
+              img.arrivals__img(src="img/new-items.png" width="221" height="221" alt="Масло трансмиссионное ЛУКОЙЛ ATF")
+            p.arrivals__text Масло трансмиссионное ЛУКОЙЛ ATF
+            p.arrivals__price 890 ₽
+            .arrivals__overlay
+              p.arrivals__overlay-text This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin,
+              a.btn.btn--red.btn--icon.btn--arrivals(href="#" target="_blank" title="Масло трансмиссионное ЛУКОЙЛ ATF") Купить
+
+    section.subcribe
+      .container
+        h2.title.subcribe__title Хотите получать информацию о новинках и скидках? Подпишитесь на нашу рассылку!
+        .subcribe__rect-wrap
+          span.subcribe__rect
+
+        form.form.form--subscribe.subcribe__form(action="#" method="post")
+          fieldset.form__fieldset.subcribe__form-fieldset
+            .form__fields
+              input.form__input(type='email' name="email" id="email" pattern="^[^@]+@[^@]+[.]{1}[^@]{2,}$" value="" placeholder="Ваш e-mail" required)
+              button.btn.btn--red.btn--subscribe(type="submit") Подписаться
+
+  footer.footer
+    .footer__top
+      .container
+        .footer__wrapper
+          form.form.form--reg.footer__form(action="#" method="post")
+            fieldset.form__fieldset.footer__form-fieldset
+              .form__fields.footer__form-fields
+                input.form__input.form__input--login(type='text' name="login" id="login" minlength="2" maxlength="20" value="" placeholder="Логин" required)
+                input.form__input.form__input--password(type='password' name="password" id="password" minlength="4"
+                  maxlength="20" size="20"  value="" placeholder="Пароль" required)
+
+                button.btn.btn--red.btn--enter(type="submit") Войти
+                a.user__link.user__link--footer-reg(href="#" target="_blank" title="Registration") Регистрация
+
+          .footer__menu-wrapper
+            .footer__menu-overlay
+              nav.menu.footer__menu.footer__menu--left
+                btn.btn.btn--footer-close
+                ul.menu__list
+                  li.menu__item: a.menu__link(href="#" target="_blank" title="Интернет-магазин") Интернет-магазин
+                  li.menu__item: a.menu__link(href="#" target="_blank" title="Оплата") Оплата
+                  li.menu__item: a.menu__link(href="#" target="_blank" title="Доставка") Доставка
+                  li.menu__item: a.menu__link(href="#" target="_blank" title="Вопрос-Ответ") Вопрос-Ответ
+                  li.menu__item: a.menu__link(href="#" target="_blank" title="Оферта") Оферта
+
+              nav.menu.footer__menu.footer__menu--right
+                ul.menu__list
+                  li.menu__item: a.menu__link(href="#" target="_blank" title="Категории") Категории
+                  li.menu__item: a.menu__link(href="#" target="_blank" title="Шины") Шины
+                  li.menu__item: a.menu__link(href="#" target="_blank" title="Автохимия") Автохимия
+                  li.menu__item: a.menu__link(href="#" target="_blank" title="Автозапчасти") Трансмисионные масла
+                  li.menu__item: a.menu__link(href="#" target="_blank" title="Масла") Моторные масла
+
+            .contacts
+              a.contacts__pickup(href="#" target="_blank" title="Пункты самовывоза") Пункты самовывоза
+              button.btn.btn--burger.btn--footer-burger
+                span
+              p.contacts__address 141700, МО, г. Долгопрудный, Лихачевский проезд, д. 16
+              a.contacts__phone(href="tel:84955439449") +7 (495) 543-94-49
+              p.contacts__business-hours Режим работы:#[br] ПН–ПТ с 08:00 до 20:00#[br] СБ–ВС с 09:00 до 18:00
+
+
+          .socials.footer__social
+            .socials__wrap
+              p.socials__text Мы в социальных сетях
+              ul.socials__list
+                li.socials__item
+                  a.socials__link(href="#" target="_blank" title="Мы в Facebook")
+                    span.visually-hidden Мы в Facebook
+                    +fb
+                li.socials__item
+                  a.socials__link(href="#" target="_blank" title="Мы в Twitter")
+                    span.visually-hidden Мы в Twitter
+                    +tw
+                li.socials__item
+                  a.socials__link(href="#" target="_blank" title="Мы в Instagramm")
+                    span.visually-hidden Мы в Instagramm
+                    +insta
+            .payment
+              .payment__wrap
+                p.payment__text Принимаем к оплате пластиковые карты
+                a.payment__link(href="#" target="_blank" title="VISA-cards")
+                  img.payment__img(src="img/icon-visa.png" width="97" height="26" alt="VISA-cards")
+
+    .footer__bottom
+      .container
+        p.footer__copy © 2019 «Альянс Тракс»
+

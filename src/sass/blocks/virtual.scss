@@ -1,0 +1,105 @@
+.virtual {
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  top: calc(50% + 25px);
+  transform: translateY(-50%);
+  left: (500 / 1920 * 100vw);
+  width: 100%;
+  max-width: 400px;
+  z-index: 900;
+  box-sizing: border-box;
+
+  @include mobile {
+    left: (400 / 1920 * 100vw);
+    max-width: 280px;
+  }
+
+  @include mobile-small {
+    left: (200 / 1920 * 100vw);
+    max-width: 280px;
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 0;
+    color: $white;
+    @include font-small-26;
+
+    & span {
+      @include font-xxxl-bold-72;
+    }
+
+    @include tablet-media {
+      font-size: 17px;
+
+      & span {
+        font-size: 46px;
+      }
+    }
+
+    @include mobile {
+      font-size: 23px;
+
+      & span {
+        font-size: 62px;
+      }
+    }
+  }
+
+  &__image {
+    display: block;
+    position: relative;
+    top: -10px;
+    width: 142px;
+    height: 142px;
+    background-image: url("../../img/icon-virtual-tour.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 0 0;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 226px;
+      height: 226px;
+      transform: translate(-50%, -50%);
+      border-radius: 50%;
+      background-color: $red-33;
+      z-index: -1;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 296px;
+      height: 296px;
+      transform: translate(-50%, -50%);
+      border-radius: 50%;
+      background-color: $red-20;
+      z-index: -1;
+    }
+
+    @include mobile {
+      width: 91px;
+      height: 91px;
+
+      &::before {
+        width: 190px;
+        height: 190px;
+      }
+
+      &::after {
+        width: 257px;
+        height: 257px;
+      }
+
+    }
+  }
+}

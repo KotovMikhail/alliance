@@ -1,0 +1,75 @@
+.offer {
+  display: flex;
+  height: 100%;
+  background-color: $primary;
+
+  @include tablet-media {
+    height:auto;
+    width: 100%;
+  }
+
+  &__list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @include list-reset;
+
+    @include tablet-media {
+      width: 100%;
+    }
+  }
+
+  &__item {
+    @include tablet-media {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 50%;
+    }
+  }
+
+  &__link {
+    position: relative;
+    padding-top: 13px;
+    padding-right: 10px;
+    padding-bottom: 13px;
+    padding-left: 35px;
+    text-transform: uppercase;
+    color: $white;
+    box-sizing: border-box;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      left: 6px;
+      background-repeat: no-repeat;
+      background-position: 0 0;
+      background-size: cover;
+    }
+
+    &--service {
+      &::before {
+        width: 22px;
+        height: 22px;
+        background-image: url("../../img/icon-rem.png");
+      }
+    }
+
+    &--sale {
+      &::before {
+        width: 28px;
+        height: 16px;
+        left: 0;
+        background-image: url("../../img/icon-track.png");
+      }
+    }
+
+    @include tablet {
+      padding-top: 7px;
+      padding-bottom: 7px;
+      font-size: 11px;
+    }
+  }
+}

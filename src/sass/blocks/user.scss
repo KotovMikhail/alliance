@@ -1,0 +1,113 @@
+.user {
+  display: flex;
+  align-items: center;
+
+  &__list {
+    display: flex;
+    @include list-reset;
+  }
+
+  &__item {
+    &:nth-child(1) {
+      margin-right: 10px;
+    }
+  }
+
+  &__link {
+    display: inline-block;
+    position: relative;
+    padding-top: 0;
+    padding-right: 20px;
+    padding-bottom: 0;
+    padding-left: 35px;
+    @include font-xs-20;
+    color: $white;
+    box-sizing: border-box;
+    transition: color 0.3s ease-in-out;
+
+    @include tablet {
+      font-size: 16px;
+    }
+
+    @include mobile {
+      padding-right: 10px;
+      padding-left: 30px;
+    }
+
+    &:hover {
+      color: $red;
+      transition: color 0.3s ease-in-out;
+    }
+
+    &--footer-reg {
+      padding: 0;
+      width: auto;
+      font-size: 16px;
+      line-height: 1.2;
+      border-bottom: 1px solid $white;
+      color: $white;
+      transition: border 0.3s ease-in-out;
+
+      &:hover {
+        color: $white;
+        border-bottom: 1px solid transparent;
+        transition: border 0.3s ease-in-out;
+      }
+
+      @include tablet-media {
+        font-size: 11px;
+      }
+
+      @include mobile-middle {
+        font-size: 16px;
+        line-height: 1.2;
+      }
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    &--enter {
+      &::before {
+        width: 28px;
+        height: 21px;
+        background-image: url("../../img/icon-enter.png");
+        background-repeat: no-repeat;
+        background-position: 0 0;
+        background-size: cover;
+
+        @include tablet {
+          width: 24px;
+          height: 18px;
+        }
+      }
+    }
+
+    &--reg {
+      &::before {
+        width: 20px;
+        height: 21px;
+        background-image: url("../../img/icon-reg.png");
+        background-repeat: no-repeat;
+        background-position: 0 0;
+        background-size: cover;
+
+        @include tablet {
+          width: 16px;
+          height: 17px;
+        }
+      }
+
+      @include tablet-media {
+        display: none;
+      }
+
+
+    }
+  }
+}

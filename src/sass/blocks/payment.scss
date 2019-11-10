@@ -1,0 +1,62 @@
+.payment {
+  margin-top: auto;
+
+  @include mobile-middle {
+    margin-top: 0;
+    width: 50%;
+  }
+
+  &__wrap{
+    @include mobile-middle {
+      max-width: 165px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      margin-left: auto;
+    }
+  }
+
+  &__text {
+    margin: 0;
+    margin-bottom: 20px;
+    width: 100%;
+    max-width: 170px;
+    color: $white;
+    font-size: 18px;
+    line-height: 1.2;
+
+    @include tablet-media {
+      margin-left: 0;
+      margin-bottom: 10px;
+      font-size: 12px;
+      line-height: 15px;
+    }
+
+    @include mobile-middle {
+      margin-bottom: 15px;
+      font-size: 18px;
+      line-height: 24px;
+    }
+  }
+
+  &__link {
+    display: inline-block;
+
+    @include tablet-media {
+      width: 63px;
+      height: 17px;
+    }
+
+    @include mobile-middle {
+      width: auto;
+      height: auto;
+    }
+  }
+
+  &__img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+
+  }
+}
